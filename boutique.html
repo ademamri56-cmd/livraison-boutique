@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>commande</title>
+    <style>
+      body {
+        font-family: arial;
+        background: #111;
+        color: white;
+        text-align: center;
+        padding: 20px;
+      }
+      .container {
+        background: red;
+        padding: 20px;
+        border-radius: 15px;
+        max-width: 350px;
+        margin: auto;
+      }
+      input,
+      textarea {
+        width: 90%;
+        padding: 10px;
+        margin: 10px;
+        border-radius: 8px;
+        border: none;
+      }
+      button {
+        background: #25d366;
+        color: white;
+        padding: 15px;
+        border: none;
+        border-radius: 10px;
+        width: 90%;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      h1 {
+        color: aqua;
+      }
+      button :hover {
+        background: #1ebe5d;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>commande</h1>
+    <div class="container">
+      <input type="text" id="nom" placeholder="votre nom " />
+      <input type="text" id="tel" placeholder="votre telephone" />
+      <textarea id="cmd" placeholder="votre commande"></textarea>
+      <input type="text" id="adresse" placeholder="vadresse " />
+      <button ondblclick="sendWhtsapp()">envoyer via whatsapp</button>
+    </div>
+    <script>
+      function sendWhtsapp() {
+        let nom = document.getElementById("nom").value;
+        let tel = document.getElementById("tel").value;
+        let cmd = document.getElementById("cmd").value;
+        let adresse = document.getElementById("adresse").value;
+
+        let meesage =
+          "nom: ${nom}%0A 📞 tel:${tel}%0A 🛒 commande : ${cmd}%0A 📍 adresse ${adresee}%0A";
+
+        let numero = "21655044353";
+        let url = "https://wa.me/${numero}?text=${meessage}";
+        window.open(url, "_blank");
+      }
+    </script>
+  </body>
+</html>
