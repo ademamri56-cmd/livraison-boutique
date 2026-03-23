@@ -63,10 +63,14 @@
         let adresse = document.getElementById("adresse").value;
 
         let meesage =
-          "nom: ${nom}%0A 📞 tel:${tel}%0A 🛒 commande : ${cmd}%0A 📍 adresse ${adresee}%0A";
+          "nom: ${nom}%0A  tel:${tel}  commande : ${cmd} adresse ${adresee}";
 
         let numero = "21655044353";
-        let url = "https://wa.me/${numero}?text=${meessage}";
+        let url =
+          "https://api.whtsapp.com/send?pjone=" +
+          numero +
+          "&text=" +
+          encodeURIComponent(meesage);
         window.open(url, "_blank");
       }
     </script>
