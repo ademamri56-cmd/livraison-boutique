@@ -62,16 +62,15 @@
         let cmd = document.getElementById("cmd").value;
         let adresse = document.getElementById("adresse").value;
 
-        let meesage =
-          "nom: ${nom}%0A  tel:${tel}  commande : ${cmd} adresse ${adresee}";
-
         let numero = "21655044353";
+
+        let meesage =
+          "nom: ${nom}  tel:${tel}  commande : ${cmd} adresse ${adresee}";
+
         let url =
-          "https://api.whtsapp.com/send?pjone=" +
-          numero +
-          "&text=" +
-          encodeURIComponent(meesage);
-        window.open(url, "_blank");
+          "https://wa.me/" + numero + "?text=" + encodeURIComponent(message);
+
+        window.location.href = url;
       }
     </script>
   </body>
